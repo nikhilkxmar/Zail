@@ -1,0 +1,31 @@
+{
+	"contracts": {
+		"Zail": "cadence/contracts/Zail.cdc"
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"sandboxnet": "access.sandboxnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": "2c3e6be2b14e1c48a7f3fee5a40ed3131e729f82acab34bea04e6e8ba0bf54ee"
+		},
+		"test": {
+			"address": "332ad228e7812d80",
+			"key": {
+				"type": "file",
+				"location": "test.pkey"
+			}
+		}
+	},
+	"deployments": {
+		"testnet": {
+			"test": [
+				"Zail"
+			]
+		}
+	}
+}

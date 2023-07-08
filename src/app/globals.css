@@ -21,3 +21,17 @@ body {
         transform: translateX(100%);
     }
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:checked+label {
+    border-color: #000;
+    border-width: 2px;
+    background-color: #fff;
+    color: #000;
+    transition: all 0.1s ease-in-out;
+}

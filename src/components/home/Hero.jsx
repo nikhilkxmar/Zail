@@ -16,7 +16,7 @@ const Hero = () => {
                 <h2 className='font-playfair text-[70px] leading-[75px]'>Lorem ipsum, dolor sit amet consectetur.</h2>
                 <p className='font-playfair text-[20px] text-gray-600 mt-[30px]'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum ex aliquid deserunt quia vero. Error facere sunt, ea voluptate facilis natus? Veniam, laudantium eaque autem assumenda voluptatibus quam explicabo temporibus?</p>
                 <div className='flex justify-start mt-[30px]'>
-                    <a href="#_" className="relative px-6 py-3 font-playfair font-semibold text-black group">
+                    <a href="/home" className="relative px-6 py-3 font-playfair font-semibold text-black group">
                         <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-blue-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
                         <span className="absolute inset-0 w-full h-full border-[3.33px] border-black"></span>
                         <span className="relative">Learn More</span>
