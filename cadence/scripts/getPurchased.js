@@ -11,7 +11,7 @@ pub fun main(account: Address, nft: UInt64): Bool {
     var buy: Bool = false
     
     for id in ids {
-        if Zail2.getMintCount(id: nft)!.contains(id) { buy = true } 
+        if Zail.getMintCount(id: nft)!.contains(id) { buy = true } 
     }
 
     return buy

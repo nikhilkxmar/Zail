@@ -30,8 +30,17 @@ input::-webkit-inner-spin-button {
 
 input:checked+label {
     border-color: #000;
-    border-width: 2px;
-    background-color: #fff;
+    border-width: 3px;
+    background-color: #d6d6d6;
     color: #000;
     transition: all 0.1s ease-in-out;
+}
+
+.cover {
+    width: 100%;
+    background: url("../assets/gradient.jpg") !important;
+    background-size: cover;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
