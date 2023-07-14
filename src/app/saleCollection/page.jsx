@@ -27,7 +27,7 @@ export default function Home() {
       const transactionId = await fcl.send([
         fcl.transaction(buyTx),
         fcl.args([
-          fcl.arg(searchParams.get('userAddress'), t.Address),
+          fcl.arg(searchParams.get('searchAddress'), t.Address),
           fcl.arg(searchParams.get('id'), t.UInt64),
         ]),
         fcl.payer(fcl.authz),
@@ -39,6 +39,9 @@ export default function Home() {
       console.log(transactionId)
       notification()
       setLoader(false)
+      setTimeout(() => {
+        window.location.replace("/library")
+      }, 3000)
       return fcl.tx(transactionId).onceSealed()
       } catch(e) {
         setLoader(false)
@@ -55,8 +58,11 @@ export default function Home() {
       ])
     ]).then(fcl.decode)
     setPurchased(result)
+    console.log(result)
     if (purchased) {
       setUpdate(true)
+    } else {
+      setUpdate(false)
     }
   }
 
@@ -97,8 +103,10 @@ export default function Home() {
 
             <p className='text-white font-playfair text-[18px] leading-[20px] mt-[20px] ml-[30px]'>Narrator: {searchParams.get('narrator')}</p>
 
+            <p className='text-white font-playfair text-[18px] leading-[20px] mt-[20px] ml-[30px]'>Price: {searchParams.get('price')}</p>
+
             <div className='flex justify-start items-center'>
-              {purchased && update ?
+              {purchased == false ?
               <button className='mt-[40px] ml-[30px]' onClick={() => buyNft()}>
                 <div className="relative inline-block px-4 py-[10px] font-medium group">
                 <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
@@ -118,7 +126,7 @@ export default function Home() {
               </button>
               }
 
-              {!purchased && update ?
+              {purchased == false ?
               <button className='mt-[40px] ml-[30px]' onClick={() => setPlayer(!player)}>
                 <div className="relative inline-block px-4 py-[10px] font-medium group">
                 <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>

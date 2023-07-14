@@ -96,6 +96,9 @@ const Form = () => {
         setAudioURL(null)
         notification()
         setLoader(false)
+        setTimeout(() => {
+          window.location.replace("/library")
+        }, 3000)
     }
 
     async function uploadThumbnail(e) {

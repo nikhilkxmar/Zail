@@ -5,6 +5,7 @@ import Image from 'next/image'
 import coverImage from '../assets/splash.jpg'
 import notImage from '../assets/not.jpg'
 import Footer from '@/components/global/Footer'
+import Head from 'next/head'
 
 export const metadata = {
   title: 'ZAIL',
@@ -14,6 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>{metadata.title}</title>
+      </head>
       <body>
         <div className='lg:block hidden'>
           <Navbar />

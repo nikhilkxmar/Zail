@@ -44,6 +44,9 @@ export default function Home() {
         notification()
         setPrice(null)
         setLoader(false)
+        setTimeout(() => {
+          window.location.replace("/library")
+        }, 3000)
         return fcl.tx(transactionId).onceSealed()
         } catch(e) {
             setLoader(false)

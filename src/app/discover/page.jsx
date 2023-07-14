@@ -90,7 +90,7 @@ export default function Home() {
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-8 px-4 pb-[100px] text-black bg-white rounded-b-[7px] border-[3px] border-gray-600'>
               {
                 Object.keys(nfts).map(nftId => (
-                  <div key={nftId} className='relative w-full bg-gray-200 text-center my-4 shadow-md cursor-pointer'>
+                  <div key={nftId} className='relative w-full bg-gray-200 text-center my-4 shadow-md cursor-pointer mb-[100px] mt-[40px]'>
                     <Link href={{pathname: '/saleCollection',
                                 query: {
                                 id : nfts[nftId].ref.id,
@@ -103,8 +103,9 @@ export default function Home() {
                                 narrator: nfts[nftId].ref.narrator,
                                 restrictedAudio: nfts[nftId].ref. restrictedAudio,                                   completeAudio: nfts[nftId].ref.completeAudio,
                                 list: nfts[nftId].ref.list,
-                                userAddress: search,
-                                price: nfts[nftId].ref.price
+                                userAddress: address,
+                                searchAddress: search,
+                                price: nfts[nftId].price
                             }
                     }}>
                     <div className = 'justify-self-stretch h-[200px] border-t-[7px]'>

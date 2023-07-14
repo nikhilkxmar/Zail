@@ -56,12 +56,12 @@ export default function Home() {
   return (
     <div>
       { address != null && address != false ?
-      <div className='flex flex-col justify-between items-center py-6 pt-12 px-12'>
+      <div className='flex flex-col justify-between items-center py-6 pt-12 px-12 w-full'>
         <div className="flex flex-col items-center w-full">
           <h2 className="w-1/2 text-center font-playfair text-[40px] leading-[50px]">
-            So what are you waiting for ?
+            Welcome back to the
           </h2>
-          <h3 className="text-blue-400 w-1/2 text-center font-playfair text-[40px] leading-[75px]">Let's Explore</h3>
+          <h3 className="text-blue-400 w-1/2 text-center font-playfair text-[40px] leading-[75px]">World of Stories</h3>
         </div>
 
         {
@@ -69,7 +69,7 @@ export default function Home() {
           <div>{ 
            nfts.length == 0 ? <div className='flex flex-col items-center mt-[60px] mb-[40vh]'><Image src={panda} alt='image' width={220} height={220}/><h2 className='mt-[10px] text-[20px] font-playfair font-semibold'>No Books owned!!</h2></div> : 
            
-           <div>
+           <div className='w-screen flex flex-col items-center'>
               <Nft nfts={nfts} userAddress={address} /> 
 
               <MintedNft nfts={nfts} userAddress={address} /> 
